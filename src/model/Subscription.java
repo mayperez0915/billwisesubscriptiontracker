@@ -1,5 +1,5 @@
-package model;
 
+package model;
 
 import java.time.LocalDate;
 
@@ -19,7 +19,7 @@ public class Subscription {
         this.id = id;
         this.appName = appName;
         this.planName = planName;
-        this.price = price;
+        setPrice(price);
         this.billingCycle = billingCycle;
         this.nextPaymentDate = nextPaymentDate;
     }
@@ -49,6 +49,13 @@ public class Subscription {
     }
 
     public void setPrice(double price) {
+
+        if (price < 0) {
+            throw new IllegalArgumentException(
+                "Price cannot be negative."
+            );
+        }
+
         this.price = price;
     }
 
@@ -68,4 +75,3 @@ public class Subscription {
         this.nextPaymentDate = nextPaymentDate;
     }
 }
-
