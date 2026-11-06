@@ -1,7 +1,7 @@
 package model;
 
 public class BillingCycle {
-    enum payment{
+    enum paymentCycle{
         MONTHLY,
         ANNUAL
     }

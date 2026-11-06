@@ -5,13 +5,13 @@ import features.SubscriptionManager;
 import java.util.Scanner;
 
 public class Mainmenu {
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         SubscriptionManager manager = new SubscriptionManager();
 
         int choice;
-
         AddSubscription addSubscription = new AddSubscription();
 
         do {
@@ -31,10 +31,10 @@ public class Mainmenu {
 
             choice = sc.nextInt();
             sc.nextLine();
-            // Clear console
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
 
+            // Clear console
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
 
             if (choice == 1) {
 
@@ -50,7 +50,6 @@ public class Mainmenu {
 
             }
 
-            
         } while (choice != 9);
 
         sc.close();
