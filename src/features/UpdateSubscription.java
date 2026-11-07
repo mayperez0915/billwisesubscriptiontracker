@@ -1,106 +1,78 @@
 
 package features;
 
-import model.Subscription;
-import model.BillingCycle;
-import utility.InputHelper;
 import java.time.LocalDate;
 import java.util.Scanner;
+import model.Subscription;
+import utility.DateHelper;
 
-public class UpdateSubscription extends SubsriptionFeature {
-
-    public UpdateSubscription(SubscriptionManager manager, Scanner sc) {
-        super(manager, sc);
-    }
+public class UpdateSubscription extends SubscriptionFeature {
 
     @Override
-    public void execute() {
+    public void execute(Scanner sc) {
 
-        System.out.println("\n========== UPDATE SUBSCRIPTION ==========");
+        System.out.println("\n===== UPDATE SUBSCRIPTION =====");
 
-        int id = InputHelper.getInt(sc, "Enter Subscription ID: ");
+        try {
+            System.out.print("Enter Subscription ID: ");
+            int id = Integer.parseInt(sc.nextLine());
 
-        Subscription s = manager.findSubscription(id);
+            Subscription subscription = service.findSubscription(id);
 
-        if (s == null) {
-            System.out.println("Subscription not found!");
-            return;
-        }
-
-        System.out.println("\n1. App Name");
-        System.out.println("2. Plan Name");
-        System.out.println("3. Price");
-        System.out.println("4. Billing Cycle");
-        System.out.println("5. Payment Date");
-
-        int choice = InputHelper.getInt(sc, "Enter choice: ");
-
-        switch (choice) {
-
-            case 1:
-                s.setAppName(
-                    InputHelper.getString(sc, "New App Name: ")
-                );
-                break;
-
-            case 2:
-                s.setPlanName(
-                    InputHelper.getString(sc, "New Plan Name: ")
-                );
-                break;
-
-            case 3:
-                s.setPrice(
-                    InputHelper.getDouble(sc, "New Price: PHP ")
-                );
-                break;
-
-            case 4:
-
-                while (true) {
-                    try {
-                        String input = InputHelper.getString(
-                            sc, "New Billing Cycle: "
-                        );
-
-                        s.setBillingCycle(
-                            BillingCycle.valueOf(
-                                input.trim().toUpperCase()
-                            )
-                        );
-
-                        break;
-
-                    } catch (IllegalArgumentException e) {
-                        System.out.println("Invalid billing cycle!");
-                    }
-                }
-                break;
-
-            case 5:
-
-                while (true) {
-                    try {
-                        LocalDate date = LocalDate.parse(
-                            InputHelper.getString(
-                                sc, "New Payment Date (YYYY-MM-DD): "
-                            )
-                        );
-
-                        s.setNextPaymentDate(date);
-                        break;
-
-                    } catch (java.time.format.DateTimeParseException e) {
-                        System.out.println("Invalid date format!");
-                    }
-                }
-                break;
-
-            default:
-                System.out.println("Invalid choice!");
+            if (subscription == null) {
+                System.out.println("Subscription not found.");
                 return;
-        }
+            }
 
-        System.out.println("Subscription updated successfully!");
+            System.out.println("1. App Name");
+            System.out.println("2. Plan Name");
+            System.out.println("3. Price");
+            System.out.println("4. Billing Cycle");
+            System.out.println("5. Next Payment Date");
+
+            System.out.print("Choose what to update: ");
+            int choice = Integer.parseInt(sc.nextLine());
+
+            switch (choice) {
+
+                case 1:
+                    System.out.print("Enter New App Name: ");
+                    subscription.setAppName(sc.nextLine());
+                    break;
+
+                case 2:
+                    System.out.print("Enter New Plan Name: ");
+                    subscription.setPlanName(sc.nextLine());
+                    break;
+
+                case 3:
+                    System.out.print("Enter New Price: ");
+                    subscription.setPrice(
+                            Double.parseDouble(sc.nextLine()));
+                    break;
+
+                case 4:
+                    System.out.print("Enter New Billing Cycle: ");
+                    subscription.setBillingCycle(sc.nextLine());
+                    break;
+
+                case 5:
+                    System.out.print("Enter New Date (YYYY-MM-DD): ");
+                    LocalDate date = DateHelper.parseDate(sc.nextLine());
+                    subscription.setNextPaymentDate(date);
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+                    return;
+            }
+
+            System.out.println("Subscription updated successfully!");
+
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a valid number.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
