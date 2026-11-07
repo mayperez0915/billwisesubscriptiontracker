@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import utility.CurrencyFormatter;
 
-public class MonthlyExpenses extends SubscriptionFeature{
+public class MonthlyExpense extends SubscriptionFeature{
 
     @Override  
 
