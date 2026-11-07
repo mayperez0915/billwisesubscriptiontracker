@@ -1,18 +1,13 @@
 package service;
-import model.User;
+
 
 public class LoginService {
-    private User user;
+    private final String username = "admin";
+    private final String password = "admin123";
 
-    public LoginService (){
-        user = new User ("admin", "admin123");
-    }
-    public boolean authenticate (String username, String password){
-        if (user.getUsername().equals(username)
-        && user.getPassword().equals(password)){
-            
-            return true;
-        }
-        return false;
+    public boolean authenticate(String enterUsername, String enterPassword){
+
+        return username.equals(enterUsername) &&
+        password.equals(enterPassword);
     }
 }
