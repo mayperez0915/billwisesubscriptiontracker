@@ -1,57 +1,57 @@
 package presentation;
 
-import features.AddSubscription;
-import features.SubscriptionManager;
+
 import java.util.Scanner;
 
 public class Mainmenu {
 
-    public static void main(String[] args) {
+    private SubscriptionMenu subscriptionMenu;
+    private ExpenseMenu expenseMenu;
 
-        Scanner sc = new Scanner(System.in);
-        SubscriptionManager manager = new SubscriptionManager();
+    public MainMenu() {
+        subscriptionMenu = new SubscriptionMenu();
+        expenseMenu = new ExpenseMenu();
+    }
 
-        int choice;
-        AddSubscription addSubscription = new AddSubscription();
+    public void display(Scanner sc) {
 
-        do {
+        int choice = -1;
 
-            System.out.println("==========================================================");
-            System.out.println("                         BILLWISE                         ");
-            System.out.println("               Subscription Expense Tracker               ");
-            System.out.println("==========================================================");
-            System.out.println("1. Add Subscription\t\t6. View Upcoming Subscriptions");
-            System.out.println("2. Update Subscription\t\t7. Calculate Monthly Expenses");
-            System.out.println("3. View All Subscriptions\t8. Calculate Annual Expenses");
-            System.out.println("4. Delete Subscription\t\t9. Exit");
-            System.out.println("5. Search Subscription");
+        while (choice != 3) {
 
-            System.out.println("\n==========================================================");
-            System.out.print("Enter Choice: ");
+            System.out.println("\n================================================");
+            System.out.println("       BILLWISE SUBSCRIPTION EXPENSE TRACKER");
+            System.out.println("================================================");
+            System.out.println("1. Subscription Management");
+            System.out.println("2. Expense Management");
+            System.out.println("3. Exit");
 
-            choice = sc.nextInt();
-            sc.nextLine();
+            System.out.print("Enter choice: ");
 
-            // Clear console
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
+            try {
+                choice = Integer.parseInt(sc.nextLine());
 
-            if (choice == 1) {
+                switch (choice) {
 
-                addSubscription.add(manager, sc);
+                    case 1:
+                        subscriptionMenu.display(sc);
+                        break;
 
-            } else if (choice == 9) {
+                    case 2:
+                        expenseMenu.display(sc);
+                        break;
 
-                System.out.println("Thank you for using Billwise!");
+                    case 3:
+                        System.out.println("Thank you for using Billwise!");
+                        break;
 
-            } else {
+                    default:
+                        System.out.println("Invalid choice.");
+                }
 
-                System.out.println("Invalid choice! Try again.");
-
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number.");
             }
-
-        } while (choice != 9);
-
-        sc.close();
+        }
     }
 }
