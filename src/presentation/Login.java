@@ -1,4 +1,3 @@
-
 package presentation;
 
 import java.util.Scanner;
@@ -19,37 +18,33 @@ public class Login {
         int attempts = 0;
         int maxAttempts = 3;
 
-        System.out.println("==========================================================");
-        System.out.println("                    BILLWISE LOGIN");
-        System.out.println("==========================================================");
+        System.out.println("================================================");
+        System.out.println("       BILLWISE SUBSCRIPTION EXPENSE TRACKER");
+        System.out.println("                    LOGIN");
+        System.out.println("================================================");
 
         while (attempts < maxAttempts) {
 
-            System.out.print("Enter username: ");
+            System.out.print("Username: ");
             String username = sc.nextLine();
 
-            System.out.print("Enter password: ");
+            System.out.print("Password: ");
             String password = sc.nextLine();
 
             if (loginService.authenticate(username, password)) {
-
                 System.out.println("\nLogin successful!");
-                System.out.println("Welcome to Billwise!");
-
                 return true;
-
-            } else {
-
-                attempts++;
-
-                System.out.println("\nIncorrect username or password.");
-                System.out.println("Attempts remaining: "
-                    + (maxAttempts - attempts));
             }
+
+            attempts++;
+
+            System.out.println("Incorrect username or password.");
+            System.out.println("Attempts remaining: " +
+                    (maxAttempts - attempts));
         }
 
         System.out.println("\nMaximum login attempts reached.");
-        System.out.println("Access denied.");
+        System.out.println("Program will now close.");
 
         return false;
     }
