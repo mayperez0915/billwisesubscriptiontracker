@@ -1,7 +1,7 @@
-import java.util.Scanner;
 import presentation.Login;
 import presentation.MainMenu;
 import service.LoginService;
+import java.util.Scanner;
 
 public class Main {
 
@@ -10,13 +10,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         LoginService loginService = new LoginService();
+
         Login login = new Login(loginService, sc);
 
         if (login.execute()) {
 
-            MainMenu mainMenu = new MainMenu(sc);
-            mainMenu.display();
+            MainMenu mainMenu = new MainMenu();
 
+            mainMenu.display(sc);
         }
 
         sc.close();
