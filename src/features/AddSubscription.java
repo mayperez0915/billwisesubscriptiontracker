@@ -55,21 +55,11 @@ public class AddSubscription extends SubscriptionFeature {
 
             System.out.println("\nSubscription added successfully!");
             System.out.println("Price: " + CurrencyFormatter.format(price));
-            System.out.print("\033[H\033[2J");
-
-            System.out.println("--------------------------------------");
-            System.out.println("Subscription ID : " + id);
-            System.out.println("App Name : " + appName);
-            System.out.println("Plan Name : " + planName);
-            System.out.println("Price : " + price);
-            System.out.println("Billing Cycle : " + billingCycle);
-            System.out.println("--------------------------------------");
 
         } catch (NumberFormatException e) {
             System.out.println("Please enter a valid number.");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
-        
     }
 }

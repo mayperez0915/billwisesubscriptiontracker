@@ -1,24 +1,27 @@
 package features;
 
-import model.Subscription;
 import java.util.ArrayList;
 import java.util.Scanner;
+import model.Subscription;
 import utility.CurrencyFormatter;
 
-public class ViewAllSubscription extends Subscriptionfeature{
-    @Override 
+public class ViewAllSubscription extends SubscriptionFeature {
 
-    public void execute(Scanner sc){
-        System.out.println("\\n===== ALL SUBSCRIPTIONS =====");
+    @Override
+    public void execute(Scanner sc) {
+
+        System.out.println("\n===== ALL SUBSCRIPTIONS =====");
 
         ArrayList<Subscription> list =
-            service.getAllSubscription();
+                service.getAllSubscriptions();
 
-        if (list.isEmpty()){
-            System.out.println("No Subscription found.");
+        if (list.isEmpty()) {
+            System.out.println("No subscriptions found.");
             return;
         }
-        for (Subscription subscription : list){
+
+        for (Subscription subscription : list) {
+
             System.out.println("-----------------------------");
             System.out.println("ID: " + subscription.getId());
             System.out.println("App Name: " + subscription.getAppName());
@@ -30,6 +33,7 @@ public class ViewAllSubscription extends Subscriptionfeature{
             System.out.println("Next Payment: " +
                     subscription.getNextPaymentDate());
         }
+
         System.out.println("-----------------------------");
         System.out.println("Total Subscriptions: " +
                 service.getTotalSubscriptions());

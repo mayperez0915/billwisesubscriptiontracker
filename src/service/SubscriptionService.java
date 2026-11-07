@@ -1,9 +1,9 @@
 package service;
 
+import java.util.ArrayList;
 import model.Subscription;
 import model.SubscriptionArray;
 import repository.SubscriptionRepository;
-import java.util.ArrayList;
 
 public class SubscriptionService {
 

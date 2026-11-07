@@ -1,19 +1,15 @@
 package features;
 
 import java.util.Scanner;
+import service.SubscriptionService;
 
 public abstract class SubscriptionFeature {
 
-    protected SubscriptionManager manager;
-    protected Scanner sc;
+    protected SubscriptionService service;
 
-    public SubscriptionFeature(
-            SubscriptionManager manager, Scanner sc) {
-
-        this.manager = manager;
-        this.sc = sc;
+    public SubscriptionFeature() {
+        service = new SubscriptionService();
     }
 
-    public abstract void execute();
-
+    public abstract void execute(Scanner sc);
 }
