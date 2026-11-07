@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class Mainmenu {
 
     private SubscriptionMenu subscriptionMenu;
-    private ExpenseMenu expenseMenu;
+    private Expensemenu expenseMenu;
 
-    public MainMenu() {
+    public Mainmenu() {
         subscriptionMenu = new SubscriptionMenu();
-        expenseMenu = new ExpenseMenu();
+        expenseMenu = new Expensemenu();
     }
 
     public void display(Scanner sc) {
