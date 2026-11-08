@@ -25,8 +25,8 @@ public class BillwiseFeatureFactory extends FeatureFactory {
             case 6:
                 return new UpcomingSubscription();
 
-            case 7:
-                return new MonthlyExpense();
+            /*case 7:
+                return new MonthlyExpense(); */
 
             case 8:
                 return new AnnualExpenses();

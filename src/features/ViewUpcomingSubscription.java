@@ -1,4 +1,4 @@
-package features;
+/*package features;
 
 import model.Subscription;
 import model.SubscriptionArray;
@@ -53,4 +53,4 @@ public class ViewUpcomingSubscription extends SubscriptionFeature {
                             today, subscription.getNextPaymentDate()));
         }
     }
-}
+}*/

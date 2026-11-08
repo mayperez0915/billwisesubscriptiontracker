@@ -1,15 +1,15 @@
 package presentation;
 
-import features.FeatureFactory;
 import features.BillwiseFeatureFactory;
+import features.FeatureFactory;
 import features.SubscriptionFeature;
 import java.util.Scanner;
 
-public class ExpenseMenu {
+public class Expensemenu {
 
     private FeatureFactory factory;
 
-    public ExpenseMenu() {
+    public Expensemenu() {
         factory = new BillwiseFeatureFactory();
     }
 

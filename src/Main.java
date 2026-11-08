@@ -1,7 +1,7 @@
-import presentation.Login;
-import presentation.MainMenu;
-import service.LoginService;
 import java.util.Scanner;
+import presentation.Login;
+import presentation.Mainmenu;
+import service.LoginService;
 
 public class Main {
 
@@ -15,7 +15,7 @@ public class Main {
 
         if (login.execute()) {
 
-            MainMenu mainMenu = new MainMenu();
+            Mainmenu mainMenu = new Mainmenu();
 
             mainMenu.display(sc);
         }
