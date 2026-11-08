@@ -1,11 +1,11 @@
 package features;
 
-import model.Subscription;
-import utility.DateHelper;
-import utility.CurrencyFormatter;
-import utility.InputValidator;
 import java.time.LocalDate;
 import java.util.Scanner;
+import model.Subscription;
+import utility.CurrencyFormatter;
+import utility.DateHelper;
+import utility.InputValidator;
 
 public class AddSubscription extends SubscriptionFeature {
 
@@ -18,7 +18,7 @@ public class AddSubscription extends SubscriptionFeature {
             System.out.print("Enter ID: ");
             int id = Integer.parseInt(sc.nextLine());
 
-            if (!InputValidator.isValidId(id)) {
+            if (!InputValidator.isValid(id)) {
                 System.out.println("Invalid ID.");
                 return;
             }
@@ -37,7 +37,7 @@ public class AddSubscription extends SubscriptionFeature {
             System.out.print("Enter Price: ");
             double price = Double.parseDouble(sc.nextLine());
 
-            if (!InputValidator.isValidPrice(price)) {
+            if (!InputValidator.isValid(price)) {
                 System.out.println("Invalid price.");
                 return;
             }
