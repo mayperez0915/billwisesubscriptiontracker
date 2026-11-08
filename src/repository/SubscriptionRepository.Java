@@ -1,11 +1,13 @@
+
 package repository;
 
 import model.Subscription;
-import model.SubscrptionArry;
-import java.util.Arraylist;
+import model.SubscriptionArray;
+import java.util.ArrayList;
 
-public class SubscriptionRepository{
-     private static final SubscriptionRepository instance =
+public class SubscriptionRepository {
+
+    private static final SubscriptionRepository instance =
             new SubscriptionRepository();
 
     private ArrayList<Subscription> subscriptions;
