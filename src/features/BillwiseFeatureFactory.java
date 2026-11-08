@@ -14,7 +14,7 @@ public class BillwiseFeatureFactory extends FeatureFactory {
                 return new UpdateSubscription();
 
             case 3:
-                return new ViewAllSubscriptions();
+                return new ViewAllSubscription();
 
             case 4:
                 return new DeleteSubscription();
@@ -23,10 +23,10 @@ public class BillwiseFeatureFactory extends FeatureFactory {
                 return new SearchSubscription();
 
             case 6:
-                return new UpcomingSubscriptions();
+                return new UpcomingSubscription();
 
             case 7:
-                return new MonthlyExpenses();
+                return new MonthlyExpense();
 
             case 8:
                 return new AnnualExpenses();
