@@ -1,9 +1,8 @@
-
 package repository;
 
+import java.util.ArrayList;
 import model.Subscription;
 import model.SubscriptionArray;
-import java.util.ArrayList;
 
 public class SubscriptionRepository {
 
@@ -29,19 +28,15 @@ public class SubscriptionRepository {
     }
 
     public Subscription findById(int id) {
-
         for (Subscription subscription : subscriptions) {
-
             if (subscription.getId() == id) {
                 return subscription;
             }
         }
-
         return null;
     }
 
     public boolean delete(int id) {
-
         Subscription subscription = findById(id);
 
         if (subscription != null) {
@@ -61,10 +56,7 @@ public class SubscriptionRepository {
     }
 
     public SubscriptionArray getAsArray() {
-
-        Subscription[] array =
-                subscriptions.toArray(new Subscription[0]);
-
+        Subscription[] array = subscriptions.toArray(new Subscription[0]);
         return new SubscriptionArray(array);
     }
 }
