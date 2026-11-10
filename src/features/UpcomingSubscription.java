@@ -12,20 +12,22 @@ public class UpcomingSubscription extends SubscriptionFeature {
 
         System.out.println("\n===== UPCOMING SUBSCRIPTIONS =====");
 
-        SubscriptionArray array =
-                service.getSubscriptionsAsArray();
+        SubscriptionArray subscriptions =
+        service.getSubscriptionsAsArray();
+
+        int subscriptionLength = subscriptions.getLength();
 
         Subscription[] upcoming =
-                new Subscription[array.getLength()];
+                new Subscription[subscriptionLength];
 
         int count = 0;
 
         LocalDate today = LocalDate.now();
         LocalDate nextWeek = today.plusDays(7);
 
-        for (int i = 0; i < array.getLength(); i++) {
+        for (int i = 0; i < subscriptions.getLength(); i++) {
 
-            Subscription subscription = array.getSubscription(i);
+            Subscription subscription = subscriptions.getSubscription(i);
 
             LocalDate paymentDate =
                     subscription.getNextPaymentDate();
