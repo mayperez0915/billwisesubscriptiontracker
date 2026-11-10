@@ -72,6 +72,11 @@ public class UpdateSubscription extends SubscriptionFeature {
             System.out.println("Please enter a valid number.");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
+        }  catch (java.time.format.DateTimeParseException e) {
+            System.out.println("Invalid date format. Use YYYY-MM-DD.");
+
+        } catch (Exception e) {
+            System.out.println("Something went wrong: " + e.getMessage());
         }
     }
 }
