@@ -18,15 +18,14 @@ public class AddSubscription extends SubscriptionFeature {
             System.out.print("Enter ID: ");
             int id = Integer.parseInt(sc.nextLine());
 
-            if (!InputValidator.isValid(id)) {
-                System.out.println("Invalid ID.");
-                return;
+            boolean isInValid = !InputValidator.isValid(id) || service.isIdExists(id);
+            String invalidText = !InputValidator.isValid(id) ? "Invalid ID" : service.isIdExists(id) ? "ID already exists" : "";
+
+            if (isInValid) {
+                System.out.println(invalidText);
             }
 
-            if (service.isIdExists(id)) {
-                System.out.println("ID already exists.");
-                return;
-            }
+            
 
             System.out.print("Enter App Name: ");
             String appName = sc.nextLine();
