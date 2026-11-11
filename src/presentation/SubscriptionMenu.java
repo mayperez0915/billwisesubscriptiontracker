@@ -43,6 +43,8 @@ public class SubscriptionMenu {
                     System.out.println("Invalid choice.");
                 }
 
+                
+
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid number.");
             } catch (IllegalArgumentException e) {
@@ -51,5 +53,6 @@ public class SubscriptionMenu {
                 System.out.println("Something went wrong: " + e.getMessage());
             }
         }
+        System.out.print("\033[H\033[2J");
     }
 }

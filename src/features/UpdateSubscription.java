@@ -78,5 +78,7 @@ public class UpdateSubscription extends SubscriptionFeature {
         } catch (Exception e) {
             System.out.println("Something went wrong: " + e.getMessage());
         }
+
+        System.out.print("\033[H\033[2J");
     }
 }

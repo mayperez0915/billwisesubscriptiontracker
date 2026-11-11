@@ -42,5 +42,7 @@ public class SearchSubscription extends SubscriptionFeature {
         if (!found) {
             System.out.println("No matching subscription found.");
         }
+
+        System.out.print("\033[H\033[2J");
     }
 }

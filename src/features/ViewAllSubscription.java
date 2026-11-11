@@ -47,5 +47,7 @@ public class ViewAllSubscription extends SubscriptionFeature {
 
         System.out.println("\nPress Enter to return to the menu...");
         sc.nextLine();
+
+        System.out.print("\033[H\033[2J");
     }
 }

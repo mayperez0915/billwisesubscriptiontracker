@@ -12,4 +12,6 @@ public abstract class SubscriptionFeature {
     }
 
     public abstract void execute(Scanner sc);
+
+    
 }

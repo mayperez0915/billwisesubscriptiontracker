@@ -57,5 +57,7 @@ public class UpcomingSubscription extends SubscriptionFeature {
                     java.time.temporal.ChronoUnit.DAYS.between(
                             today, subscription.getNextPaymentDate()));
         }
+
+        System.out.print("\033[H\033[2J");
     }
 }

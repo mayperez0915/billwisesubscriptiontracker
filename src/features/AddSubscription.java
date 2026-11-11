@@ -60,5 +60,7 @@ public class AddSubscription extends SubscriptionFeature {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+
+        System.out.print("\033[H\033[2J");
     }
 }

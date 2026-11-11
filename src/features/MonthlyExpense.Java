@@ -26,5 +26,7 @@ public class MonthlyExpense extends SubscriptionFeature{
         }
         System.out.println("Total Monthly Expenses: " +
                 CurrencyFormatter.format(total));
+        
+        System.out.print("\033[H\033[2J");
     }
 }

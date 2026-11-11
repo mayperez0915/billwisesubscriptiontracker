@@ -55,5 +55,6 @@ public class Mainmenu {
                 System.out.println("Something went wrong: " + e.getMessage());
             }
         }
+        System.out.print("\033[H\033[2J");
     }
 }
