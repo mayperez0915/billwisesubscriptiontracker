@@ -1,8 +1,8 @@
-/*package features;
+package features;
 
-import model.Subscription;
 import java.util.ArrayList;
 import java.util.Scanner;
+import model.Subscription;
 import utility.CurrencyFormatter;
 
 public class MonthlyExpense extends SubscriptionFeature{
@@ -27,4 +27,4 @@ public class MonthlyExpense extends SubscriptionFeature{
         System.out.println("Total Monthly Expenses: " +
                 CurrencyFormatter.format(total));
     }
-}*/
+}
