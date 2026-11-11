@@ -1,3 +1,4 @@
+
 package presentation;
 
 import features.BillwiseFeatureFactory;
@@ -30,40 +31,45 @@ public class Expensemenu {
             try {
                 choice = Integer.parseInt(sc.nextLine());
 
-                int featureChoice = 0;
+                SubscriptionFeature feature = null;
 
                 switch (choice) {
+
                     case 1:
-                        featureChoice = 6;
+                        feature = factory.createFeature(6);
                         break;
 
                     case 2:
-                        featureChoice = 7;
+                        feature = factory.createFeature(7);
                         break;
 
                     case 3:
-                        featureChoice = 8;
+                        feature = factory.createFeature(8);
                         break;
 
                     case 0:
+                        System.out.println("Returning to Main Menu...");
                         break;
 
                     default:
                         System.out.println("Invalid choice.");
+                        break;
                 }
 
-                if (featureChoice != 0) {
-
-                    SubscriptionFeature feature =
-                            factory.createFeature(featureChoice);
+                if (feature != null) {
 
                     feature.execute(sc);
+
+                    System.out.println("\nPress Enter to continue...");
+                    sc.nextLine();
                 }
 
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid number.");
+
             } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+                System.out.println(e.getMessage());
+
             } catch (Exception e) {
                 System.out.println("Something went wrong: " + e.getMessage());
             }
