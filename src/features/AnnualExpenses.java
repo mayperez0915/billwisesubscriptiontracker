@@ -1,4 +1,4 @@
-package features;
+/*package features;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -29,4 +29,4 @@ public class AnnualExpenses extends SubscriptionFeature {
         System.out.println("Total Annual Expenses: " +
                 CurrencyFormatter.format(total));
     }
-}
+}*/
