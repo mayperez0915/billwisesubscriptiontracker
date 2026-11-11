@@ -3,6 +3,7 @@ package features;
 import java.util.ArrayList;
 import java.util.Scanner;
 import model.Subscription;
+import utility.ScreenHelper;
 
 public class SearchSubscription extends SubscriptionFeature {
 
@@ -43,6 +44,6 @@ public class SearchSubscription extends SubscriptionFeature {
             System.out.println("No matching subscription found.");
         }
 
-        System.out.print("\033[H\033[2J");
+        ScreenHelper.pauseAndClear(sc);
     }
 }

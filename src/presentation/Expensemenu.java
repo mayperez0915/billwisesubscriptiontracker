@@ -5,6 +5,7 @@ import features.BillwiseFeatureFactory;
 import features.FeatureFactory;
 import features.SubscriptionFeature;
 import java.util.Scanner;
+import utility.ScreenHelper;
 
 public class Expensemenu {
 
@@ -76,5 +77,7 @@ public class Expensemenu {
             
             
         }
+
+        ScreenHelper.pauseAndClear(sc);
     }
 }

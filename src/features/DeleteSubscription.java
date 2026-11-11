@@ -2,6 +2,7 @@ package features;
 
 import java.util.Scanner;
 import model.Subscription;
+import utility.ScreenHelper;
 
 public class DeleteSubscription extends SubscriptionFeature {
     
@@ -43,6 +44,7 @@ public class DeleteSubscription extends SubscriptionFeature {
         } catch (Exception e) {
             System.out.println("Something went wrong: " + e.getMessage());
         }
-        System.out.print("\033[H\033[2J");
+
+        ScreenHelper.pauseAndClear(sc);
     }
 }

@@ -1,7 +1,7 @@
 package presentation;
 
-
 import java.util.Scanner;
+import utility.ScreenHelper;
 
 public class Mainmenu {
 
@@ -54,7 +54,8 @@ public class Mainmenu {
             } catch (Exception e) {
                 System.out.println("Something went wrong: " + e.getMessage());
             }
+
+            ScreenHelper.pauseAndClear(sc);
         }
-        System.out.print("\033[H\033[2J");
     }
 }

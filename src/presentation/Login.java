@@ -2,6 +2,7 @@ package presentation;
 
 import java.util.Scanner;
 import service.LoginService;
+import utility.ScreenHelper;
 
 public class Login {
 
@@ -46,8 +47,7 @@ public class Login {
         System.out.println("\nMaximum login attempts reached.");
         System.out.println("Program will now close.");
 
+        ScreenHelper.pauseAndClear(sc);
         return false;
-        
     }
-    
 }

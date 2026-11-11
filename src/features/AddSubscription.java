@@ -6,6 +6,7 @@ import model.Subscription;
 import utility.CurrencyFormatter;
 import utility.DateHelper;
 import utility.InputValidator;
+import utility.ScreenHelper;
 
 public class AddSubscription extends SubscriptionFeature {
 
@@ -61,6 +62,6 @@ public class AddSubscription extends SubscriptionFeature {
             System.out.println(e.getMessage());
         }
 
-        System.out.print("\033[H\033[2J");
+        ScreenHelper.pauseAndClear(sc);
     }
 }

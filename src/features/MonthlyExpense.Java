@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import model.Subscription;
 import utility.CurrencyFormatter;
+import utility.ScreenHelper;
 
 public class MonthlyExpense extends SubscriptionFeature{
 
@@ -26,7 +27,7 @@ public class MonthlyExpense extends SubscriptionFeature{
         }
         System.out.println("Total Monthly Expenses: " +
                 CurrencyFormatter.format(total));
-        
-        System.out.print("\033[H\033[2J");
+
+        ScreenHelper.pauseAndClear(sc);
     }
 }

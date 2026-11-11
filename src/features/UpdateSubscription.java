@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 import model.Subscription;
 import utility.DateHelper;
+import utility.ScreenHelper;
 
 public class UpdateSubscription extends SubscriptionFeature {
 
@@ -79,6 +80,6 @@ public class UpdateSubscription extends SubscriptionFeature {
             System.out.println("Something went wrong: " + e.getMessage());
         }
 
-        System.out.print("\033[H\033[2J");
+        ScreenHelper.pauseAndClear(sc);
     }
 }

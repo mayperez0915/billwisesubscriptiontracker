@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 import model.Subscription;
 import model.SubscriptionArray;
+import utility.ScreenHelper;
 
 public class UpcomingSubscription extends SubscriptionFeature {
 
@@ -58,6 +59,6 @@ public class UpcomingSubscription extends SubscriptionFeature {
                             today, subscription.getNextPaymentDate()));
         }
 
-        System.out.print("\033[H\033[2J");
+        ScreenHelper.pauseAndClear(sc);
     }
 }
