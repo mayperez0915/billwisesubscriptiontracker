@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class Subscription {
 
-     private int id;
+    private int id;
     private String appName;
     private String planName;
     private double price;
@@ -34,12 +34,16 @@ public class Subscription {
         this.id = id;
     }
 
+    public boolean isNameValid(String value) {
+    return value != null && !value.trim().isEmpty();
+    }
+
     public String getAppName() {
         return appName;
     }
 
     public void setAppName(String appName) {
-        if (appName == null || appName.trim().isEmpty()) {
+        if (isNameValid(appName)) {
             throw new IllegalArgumentException("App name cannot be empty.");
         }
         this.appName = appName;
@@ -50,7 +54,7 @@ public class Subscription {
     }
 
     public void setPlanName(String planName) {
-        if (planName == null || planName.trim().isEmpty()) {
+        if (isNameValid(planName)) {
             throw new IllegalArgumentException("Plan name cannot be empty.");
         }
         this.planName = planName;
