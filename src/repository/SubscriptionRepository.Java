@@ -9,7 +9,7 @@ public class SubscriptionRepository {
     private static final SubscriptionRepository instance =
             new SubscriptionRepository();
 
-    private ArrayList<Subscription> subscriptions;
+    private final ArrayList<Subscription> subscriptions;
 
     private SubscriptionRepository() {
         subscriptions = new ArrayList<>();

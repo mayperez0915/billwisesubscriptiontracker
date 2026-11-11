@@ -2,7 +2,7 @@ package model;
 
 public class SubscriptionArray {
     
-    private Subscription[] subscriptions;
+    private final Subscription[] subscriptions;
 
     public SubscriptionArray() {
         subscriptions = new Subscription[100];

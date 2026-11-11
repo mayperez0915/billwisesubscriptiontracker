@@ -7,7 +7,7 @@ import repository.SubscriptionRepository;
 
 public class SubscriptionService {
 
-    private SubscriptionRepository repository;
+    private final SubscriptionRepository repository;
 
     public SubscriptionService() {
         repository = SubscriptionRepository.getInstance();

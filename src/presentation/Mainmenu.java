@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Mainmenu {
 
-    private SubscriptionMenu subscriptionMenu;
-    private Expensemenu expenseMenu;
+    private final SubscriptionMenu subscriptionMenu;
+    private final  Expensemenu expenseMenu;
 
     public Mainmenu() {
         subscriptionMenu = new SubscriptionMenu();
@@ -51,8 +51,6 @@ public class Mainmenu {
 
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid number.");
-            } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
             } catch (Exception e) {
                 System.out.println("Something went wrong: " + e.getMessage());
             }

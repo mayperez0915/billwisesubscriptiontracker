@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class SubscriptionMenu {
 
-    private FeatureFactory factory;
+    private final FeatureFactory factory;
 
     public SubscriptionMenu() {
         factory = new BillwiseFeatureFactory();

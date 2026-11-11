@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Expensemenu {
 
-    private FeatureFactory factory;
+    private final FeatureFactory factory;
 
     public Expensemenu() {
         factory = new BillwiseFeatureFactory();

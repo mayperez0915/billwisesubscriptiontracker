@@ -5,8 +5,8 @@ import service.LoginService;
 
 public class Login {
 
-    private LoginService loginService;
-    private Scanner sc;
+    private final LoginService loginService;
+    private final Scanner sc;
 
     public Login(LoginService loginService, Scanner sc) {
         this.loginService = loginService;
