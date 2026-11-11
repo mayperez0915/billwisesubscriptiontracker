@@ -38,6 +38,10 @@ public class DeleteSubscription extends SubscriptionFeature {
             }
         } catch (NumberFormatException e){
             System.out.println("Please enter a valid number.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Something went wrong: " + e.getMessage());
         }
     }
 }
