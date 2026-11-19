@@ -4,6 +4,7 @@ import features.BillwiseFeatureFactory;
 import features.FeatureFactory;
 import features.SubscriptionFeature;
 import java.util.Scanner;
+import utility.ScreenHelper;
 
 public class SubscriptionMenu {
 
@@ -19,7 +20,9 @@ public class SubscriptionMenu {
 
         while (choice != 0) {
 
-            System.out.println("\n===== SUBSCRIPTION MANAGEMENT =====");
+            System.out.println("================================================");
+            System.out.println("              SUBSCRIPTION MANAGEMENT");
+            System.out.println("================================================");
             System.out.println("1. Add Subscription");
             System.out.println("2. Update Subscription");
             System.out.println("3. View All Subscriptions");
@@ -43,8 +46,6 @@ public class SubscriptionMenu {
                     System.out.println("Invalid choice.");
                 }
 
-                
-
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid number.");
             } catch (IllegalArgumentException e) {
@@ -52,7 +53,8 @@ public class SubscriptionMenu {
             } catch (Exception e) {
                 System.out.println("Something went wrong: " + e.getMessage());
             }
+
+            ScreenHelper.pauseAndClear(sc);
         }
-        System.out.print("\033[H\033[2J");
     }
 }

@@ -2,8 +2,8 @@ package service;
 
 
 public class LoginService {
-    private final String username = "admin";
-    private final String password = "admin123";
+    private final String username = "User";
+    private final String password = "user123";
 
     public boolean authenticate(String enterUsername, String enterPassword){
 
